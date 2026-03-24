@@ -25,6 +25,6 @@ resource "aws_instance" "app_server" {
                 nohup busybox httpd -f -p 80 &
                   EOF
   tags = {
-    Name = "srv001-terra"
+    Name = "srv001-teste"
   }
 }
