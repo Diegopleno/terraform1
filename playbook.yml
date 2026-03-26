@@ -5,4 +5,4 @@
       dest: /home/ubuntu/index.html
       content: <h1>Feito com Terraform & Ansible 2</h1>
   - name: Criando Servidor
-    shell: "nohup busybox httpd -f -p 80 &"
+    shell: "sudo nohup busybox httpd -f -p 80 &"

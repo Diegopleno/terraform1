@@ -28,3 +28,13 @@ resource "aws_instance" "app_server" {
     Name = "srv001-teste"
   }
 }
+
+output "ip_publico" {
+  value = aws_instance.app_server.public_ip
+  description = "Endereço IP publico"
+}
+
+output "id_da_instancia" {
+  value = aws_instance.app_server.id
+  description = "ID da instancia"
+}
