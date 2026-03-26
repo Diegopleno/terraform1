@@ -1,8 +1,15 @@
 - hosts: terraform-ansible
+  become: yes
   tasks:
   - name: Criando Arquivo
     copy:
       dest: /home/ubuntu/index.html
       content: <h1>Feito com Terraform & Ansible 2</h1>
   - name: Criando Servidor
-    shell: "sudo nohup busybox httpd -f -p 80 &"
+    shell: "nohup busybox httpd -f -p 80 &"
+  - name: Instalando novos pacotes
+    apt:
+        name:
+        - python3
+        - virtualenv
+        update_cache: yes
