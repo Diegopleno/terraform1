@@ -17,7 +17,7 @@ resource "aws_instance" "app_server" {
   ami           = "ami-0007e082d5009529b"
   instance_type = "t2.micro"
   key_name = "dsgomeslab"
-  vpc_security_group_ids = ["sg-0123456789abcdef"]
+  vpc_security_group_ids = ["sg-0dbb42b8aeb1adb7d"]
   user_data = <<-EOF
                 #!/bin/bash
                 cd /home/ubuntu
