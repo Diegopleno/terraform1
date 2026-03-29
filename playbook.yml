@@ -13,3 +13,19 @@
         - python3
         - virtualenv
         update_cache: yes
+  - name: Instalando Depedencias do Django & Djangorestframework
+    pip:
+      virtualenv: /home/ubuntu/tcc/virtualenv
+      name:
+      - django
+      - djangorestframework
+  - name: iniciando o projeto
+    shell: '. /home/ubuntu/tcc/virtualenv/bin/activate; django-admin startproject setup /home/ubuntu/tcc'
+  - name: Alterando os hosts do settings
+    lineinfile:
+      path: /home/ubuntu/tcc/setup/settings.py
+      regex: 'ALLOWED_HOSTS'
+      line: 'ALLOWED_HOSTS = ["*"]'
+      backrefs: yes
+  - name: iniciando o serivdor django
+    shell: 'cd /home/ubuntu/tcc;. virtualenv/bin/activate; python manage.py runserver 0.0.0.0:8000'
