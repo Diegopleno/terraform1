@@ -18,12 +18,6 @@ resource "aws_instance" "app_server" {
   instance_type = "t2.micro"
   key_name = "dsgomeslab"
   vpc_security_group_ids = ["sg-0dbb42b8aeb1adb7d"]
-/*  user_data = <<-EOF
-                #!/bin/bash
-                cd /home/ubuntu
-                echo "<h1>Terraform ansible python</h1>" > index.html
-                nohup busybox httpd -f -p 80 &
-                  EOF*/
   tags = {
     Name = "Terraform Ansible Python"
   }
