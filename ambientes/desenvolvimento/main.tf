@@ -1,0 +1,21 @@
+module "aws-dev" {
+  source = "../../infraestrutura"
+  regiao_aws = "us-east-1"
+  instancia = "t2.micro"
+  ssh_key = "chave-dev"
+}
+
+output "ip_publico" {
+  value = module.aws-dev.ip_publico
+  description = "Endereço IP publico"
+}
+
+output "id_da_instancia" {
+  value = module.aws-dev.id_da_instancia
+  description = "ID da instancia"
+}
+
+output "id_securitygroup" {
+  value = module.aws_security_group.acesso
+  description = "ID do Grupo de segurança"
+}

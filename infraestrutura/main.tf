@@ -10,17 +10,22 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = var.regiao_aws
 }
 
 resource "aws_instance" "app_server" {
   ami           = "ami-0007e082d5009529b"
-  instance_type = "t2.micro"
-  key_name = "dsgomeslab"
-  vpc_security_group_ids = ["sg-0dbb42b8aeb1adb7d"]
+  instance_type = var.instancia
+  key_name = var.ssh_key
+  /*vpc_security_group_ids = ["sg-0dbb42b8aeb1adb7d"]*/
   tags = {
-    Name = "Terraform Ansible Python"
+    Name = "Instância EC2"
   }
+}
+
+resource "aws_key_pair" "ChaveSSH" {
+  key_name = var.ssh_key
+  public_key = file("${var.ssh_key}.pub")
 }
 
 output "ip_publico" {
