@@ -19,7 +19,7 @@ resource "aws_security_group" "acesso" {
         name = "acesso"
     }
 }
-
+/*
 output "id_securitygroup" {
   value = var.id_grupo_de_segurança
-}
+}*/
