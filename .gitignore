@@ -6,3 +6,5 @@
 *.tfstate
 *.tfstate.*
 *.pem
+/infraestrutura/playbook.yml
+*chave*

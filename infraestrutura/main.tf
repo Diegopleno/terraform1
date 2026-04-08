@@ -28,12 +28,27 @@ resource "aws_key_pair" "ChaveSSH" {
   public_key = file("${var.ssh_key}.pub")
 }
 
+
+/////*---------------------------------*/
+/////*---------------------------------*/
+
 output "ip_publico" {
-  value = aws_instance.app_server.public_ip
+/*  value = aws_instance.app_server.public_ip*/
+    value = var.ip_publico
   description = "Endereço IP publico"
 }
 
 output "id_da_instancia" {
-  value = aws_instance.app_server.id
+  value = var.id_da_instancia
   description = "ID da instancia"
 }
+
+/*output "id_da_instancia" {
+  value = aws_instance.app_server.id
+  description = "ID da instancia"
+}*/
+
+
+/*output "id_securitygroup" {
+  value = var.id_grupo_de_segurança
+}*/

@@ -21,5 +21,5 @@ resource "aws_security_group" "acesso" {
 }
 
 output "id_securitygroup" {
-  value = aws_security_group.acesso
+  value = var.id_grupo_de_segurança
 }
