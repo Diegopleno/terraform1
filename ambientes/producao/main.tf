@@ -1,13 +1,13 @@
-module "aws-dev" {
+module "aws-prod" {
   source = "../../infraestrutura"
   regiao_aws = "us-east-1"
   instancia = "t2.micro"
-  ssh_key = "chave-dev"
-  ambiente = "acesso-dev"  
+  ssh_key = "chave-prod"
+  ambiente = "acesso-prod" #grupo_de_segurança = module.network.security_group_id_producao
 }
 
 output "ip_publico" {
-  value = module.aws-dev.ip_publico
+  value = module.aws-prod.ip_publico
 }
 /* ip_publico = "aws_instance.app_server.id"
   id_da_instancia = "var.id_da_instancia"

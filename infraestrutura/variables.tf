@@ -7,7 +7,17 @@ variable "ssh_key" {
 variable "instancia" {
   type = string
 }
+variable "ambiente" {
+  type = string
+}
+
 /*
+variable "grupo_de_segurança" {
+  type = string
+  #default = ""
+}
+
+
 variable "ip_publico" {
   type = string
 }

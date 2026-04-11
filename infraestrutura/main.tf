@@ -18,6 +18,7 @@ resource "aws_instance" "app_server" {
   instance_type = var.instancia
   key_name = var.ssh_key
   /*vpc_security_group_ids = ["sg-0dbb42b8aeb1adb7d"]*/
+  vpc_security_group_ids = [local.security_group_id]
   tags = {
     Name = "Instância EC2"
   }

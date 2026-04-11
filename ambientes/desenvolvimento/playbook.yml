@@ -33,4 +33,9 @@
       line: 'ALLOWED_HOSTS = ["*"]'
       backrefs: yes
   - name: iniciando o servidor django
-    shell: 'cd /home/ubuntu/tcc;. virtualenv/bin/activate; python manage.py runserver 0.0.0.0:8000'
+    shell: |
+      cd /home/ubuntu/tcc
+      . virtualenv/bin/activate
+      nohup python manage.py runserver 0.0.0.0:8000 > django.log 2>&1 & 
+    async: 10 
+    poll: 0
